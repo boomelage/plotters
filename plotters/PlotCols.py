@@ -25,18 +25,3 @@ def PlotCols(df,exclusions=None,index=None):
 		axs[i].plot(df[col],color='purple',label=col.replace('_',' '))
 		axs[i].legend()
 	plt.show()
-
-
-from pathlib import Path
-from model_settings import ms
-ms.find_root(Path(__file__))
-ms.collect_spx_calibrations()
-
-
-exclusions = ['date']
-index = 'calculation_date'
-df = ms.spx_calibrations
-figsize = (10,15)
-
-
-PlotCols(df,index='calculation_date')
