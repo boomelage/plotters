@@ -9,7 +9,7 @@ def PlotCols(df,col_names=None,index=None,figsize=(10,15),exclusions=None):
 	"""
 	if index != None:
 		df = df.set_index(index)
-		df.index = pd.to_datetime(df.index)
+		df.index = pd.to_datetime(df.index,format='mixed')
 	else:
 		index = []
 	if col_names == None:
